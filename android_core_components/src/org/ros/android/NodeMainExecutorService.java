@@ -216,13 +216,13 @@ public class NodeMainExecutorService extends Service implements NodeMainExecutor
       return START_NOT_STICKY;
     }
     if (intent.getAction().equals(ACTION_START)) {
-      Log.d("mTag", "Lort");
-      Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TICKER));
-      Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TITLE));
-      Intent notificationIntent = new Intent(this, NodeMainExecutorService.class);
-      notificationIntent.setAction(NodeMainExecutorService.ACTION_SHUTDOWN);
-      PendingIntent pendingIntent = PendingIntent.getService(this, 0, notificationIntent, 0);
-      Notification notification = buildNotification(intent, pendingIntent);
+      //Log.d("mTag", "Lort");
+      //Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TICKER));
+      //Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TITLE));
+      //Intent notificationIntent = new Intent(this, NodeMainExecutorService.class);
+      //notificationIntent.setAction(NodeMainExecutorService.ACTION_SHUTDOWN);
+      //PendingIntent pendingIntent = PendingIntent.getService(this, 0, notificationIntent, 0);
+      //Notification notification = buildNotification(intent, pendingIntent);
 
       startForeground(ONGOING_NOTIFICATION, notification);
     }
