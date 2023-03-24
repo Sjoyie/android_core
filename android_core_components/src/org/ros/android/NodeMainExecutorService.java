@@ -14,7 +14,7 @@
  * the License.
  */
 
-package org.ros.android;
+//package org.ros.android;
 
 import com.google.common.base.Preconditions;
 
