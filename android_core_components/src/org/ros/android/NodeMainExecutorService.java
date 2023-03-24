@@ -14,7 +14,7 @@
  * the License.
  */
 
-//package org.ros.android;
+package org.ros.android;
 
 import com.google.common.base.Preconditions;
 
@@ -217,12 +217,12 @@ public class NodeMainExecutorService extends Service implements NodeMainExecutor
     }
     if (intent.getAction().equals(ACTION_START)) {
       Log.d("mTag", "Lort");
-      //Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TICKER));
-      //Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TITLE));
-      //Intent notificationIntent = new Intent(this, NodeMainExecutorService.class);
-      //notificationIntent.setAction(NodeMainExecutorService.ACTION_SHUTDOWN);
-      //PendingIntent pendingIntent = PendingIntent.getService(this, 0, notificationIntent, 0);
-      //Notification notification = buildNotification(intent, pendingIntent);
+      Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TICKER));
+      Preconditions.checkArgument(intent.hasExtra(EXTRA_NOTIFICATION_TITLE));
+      Intent notificationIntent = new Intent(this, NodeMainExecutorService.class);
+      notificationIntent.setAction(NodeMainExecutorService.ACTION_SHUTDOWN);
+      PendingIntent pendingIntent = PendingIntent.getService(this, 0, notificationIntent, 0);
+      Notification notification = buildNotification(intent, pendingIntent);
 
       startForeground(ONGOING_NOTIFICATION, notification);
     }
